@@ -26,7 +26,7 @@ async function getRegistrationToken() {
     core.info('GitHub Registration Token is received');
     return response.data.token;
   } catch (error) {
-    core.error('GitHub Registration Token receiving error');
+    core.error('GitHub Registration Token receiving error: ');
     throw error;
   }
 }
@@ -46,7 +46,7 @@ async function removeRunner() {
     core.info(`GitHub self-hosted runner ${runner.name} is removed`);
     return;
   } catch (error) {
-    core.error('GitHub self-hosted runner removal error');
+    core.error("GitHub self-hosted runner removal error: " + error);
     throw error;
   }
 }
